@@ -82,8 +82,8 @@ function turnHoursToMinutes(moviesArray) {
 
 let moviesClone = structuredClone(moviesArray)
     let durationNumber = movies.map((movies) => {
-        let edit = movies.duration
-        
+        movies.duration = movies.duration.replace("h", "") + movies.duration.replace("min", "")
+        return movies.duration
     })
 
     console.log(durationNumber)
@@ -96,7 +96,7 @@ function bestYearAvg(moviesArray) {
      if (moviesArray.length === 0) {
         return null
      }
-     console.log(sortByYear)
-   return sortByYear
+     
+   
 }
 bestYearAvg(movies)
